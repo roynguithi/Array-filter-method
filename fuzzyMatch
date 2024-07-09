@@ -1,0 +1,16 @@
+function fuzzyMatch(drivers, query) {
+    // Convert the query to lowercase for case-insensitive comparison
+    const lowerCaseQuery = query.toLowerCase();
+    
+    // Filter the drivers array and return the matching drivers
+    return drivers.filter(driver => driver.toLowerCase().startsWith(lowerCaseQuery));
+}
+
+// Example usage:
+const drivers = ["Brian", "Mike", "Mercy", "Don", "Brian", "john", "Petra"];
+console.log(fuzzyMatch(drivers, "Br"));  // Output: ["Brian", "Brian"]
+console.log(fuzzyMatch(drivers, "Mi"));  // Output: ["Mike"]
+console.log(fuzzyMatch(drivers, "Me"));  // Output: ["Mercy"]
+console.log(fuzzyMatch(drivers, "Do"));  // Output: ["Don"]
+console.log(fuzzyMatch(drivers, "Pe"));  // Output: ["Petra"]
+console.log(fuzzyMatch(drivers, "Te"));// Output: []

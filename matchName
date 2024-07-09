@@ -1,0 +1,21 @@
+function matchName(drivers, name) {
+    // Convert the name to lowercase for case-insensitive comparison
+    const lowerCaseName = name.toLowerCase();
+    
+    // Filter the drivers array and return the matching drivers
+    return drivers.filter(driver => driver.name.toLowerCase() === lowerCaseName);
+}
+
+// Example usage:
+const drivers = [
+    { name: "Brian", hometown: "Nairobi" },
+    { name: "Mercy", hometown: "Kisumu" },
+    { name: "Mike", hometown: "Mombasa" },
+    { name: "Don", hometown: "Lamu" },
+    { name: "Petra", hometown: "Nyeri" },
+    { name: "Daniella", hometown: "Nyahururu" }
+];
+
+console.log(matchName(drivers, "Brian"));  // Output: [ name: "Brian", hometown: "Nairobi"]
+console.log(matchName(drivers, "Mercy"));  // Output: [ name: "Mercy", hometown: "Kisumu" ]
+console.log(matchName(drivers, "Petra"));  // Output: [ namw: "Petra", hometown: "Nyeri"]

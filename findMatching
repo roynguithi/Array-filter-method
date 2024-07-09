@@ -1,0 +1,13 @@
+function findMatching(drivers, name) {
+    // Convert the name to lowercase for case-insensitive comparison
+    const lowerCaseName = name.toLowerCase();
+    
+    // Filter the drivers array and return the matching drivers
+    return drivers.filter(driver => driver.toLowerCase() === lowerCaseName);
+}
+
+// Example usage:
+const drivers = ["Brian", "Mercy", "Mike", "Don", "Petra"];
+console.log(findMatching(drivers, "Brian"));  // Output: ["Brian", "brian"]
+console.log(findMatching(drivers, "Mercy"));  // Output: ["Mercy", "mercy"]
+console.log(findMatching(drivers, "Mike"));  // Output: []
